@@ -13,6 +13,7 @@
 		8602DF0C27580AAC00BA86E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8602DF0A27580AAC00BA86E2 /* Main.storyboard */; };
 		8602DF0E27580AB200BA86E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8602DF0D27580AB200BA86E2 /* Assets.xcassets */; };
 		8602DF1127580AB200BA86E2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8602DF0F27580AB200BA86E2 /* LaunchScreen.storyboard */; };
+		8602DF1A2758127F00BA86E2 /* NewsCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8602DF192758127F00BA86E2 /* NewsCollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		8602DF0D27580AB200BA86E2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8602DF1027580AB200BA86E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8602DF1227580AB200BA86E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8602DF192758127F00BA86E2 /* NewsCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsCollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +58,40 @@
 		8602DF0327580AAC00BA86E2 /* The Guardian News App */ = {
 			isa = PBXGroup;
 			children = (
-				8602DF0427580AAC00BA86E2 /* AppDelegate.swift */,
-				8602DF0627580AAC00BA86E2 /* SceneDelegate.swift */,
-				8602DF0827580AAC00BA86E2 /* ViewController.swift */,
-				8602DF0A27580AAC00BA86E2 /* Main.storyboard */,
+				8602DF1B2758136F00BA86E2 /* UIApplication */,
+				8602DF182758126000BA86E2 /* Controller */,
+				8602DF1C2758138400BA86E2 /* View */,
 				8602DF0D27580AB200BA86E2 /* Assets.xcassets */,
-				8602DF0F27580AB200BA86E2 /* LaunchScreen.storyboard */,
 				8602DF1227580AB200BA86E2 /* Info.plist */,
 			);
 			path = "The Guardian News App";
+			sourceTree = "<group>";
+		};
+		8602DF182758126000BA86E2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8602DF0827580AAC00BA86E2 /* ViewController.swift */,
+				8602DF192758127F00BA86E2 /* NewsCollectionViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8602DF1B2758136F00BA86E2 /* UIApplication */ = {
+			isa = PBXGroup;
+			children = (
+				8602DF0427580AAC00BA86E2 /* AppDelegate.swift */,
+				8602DF0627580AAC00BA86E2 /* SceneDelegate.swift */,
+			);
+			path = UIApplication;
+			sourceTree = "<group>";
+		};
+		8602DF1C2758138400BA86E2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8602DF0A27580AAC00BA86E2 /* Main.storyboard */,
+				8602DF0F27580AB200BA86E2 /* LaunchScreen.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +165,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8602DF0927580AAC00BA86E2 /* ViewController.swift in Sources */,
+				8602DF1A2758127F00BA86E2 /* NewsCollectionViewController.swift in Sources */,
 				8602DF0527580AAC00BA86E2 /* AppDelegate.swift in Sources */,
 				8602DF0727580AAC00BA86E2 /* SceneDelegate.swift in Sources */,
 			);
