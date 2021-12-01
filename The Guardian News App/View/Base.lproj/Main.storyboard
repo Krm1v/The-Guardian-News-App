@@ -37,7 +37,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="gB1-ne-OFQ" kind="show" id="IC5-ah-vdy"/>
+                                    <segue destination="gB1-ne-OFQ" kind="show" identifier="toNewsVC" id="IC5-ah-vdy"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -61,27 +61,27 @@
         <!--Feed:-->
         <scene sceneID="c10-Kv-lID">
             <objects>
-                <collectionViewController id="gB1-ne-OFQ" sceneMemberID="viewController">
+                <collectionViewController id="gB1-ne-OFQ" customClass="NewsCollectionViewController" customModule="The_Guardian_News_App" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="n8b-Z8-2hm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Prc-cs-h5M">
-                            <size key="itemSize" width="414" height="128"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="20" minimumInteritemSpacing="20" id="6Ma-bq-RqM">
+                            <size key="itemSize" width="375" height="128"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="RKt-tD-tki">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="128"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="RKt-tD-tki">
+                                <rect key="frame" x="19.5" y="0.0" width="375" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Bkx-LN-x7u">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="128"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="128"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Covid news live: Omicron detected in US; UK reports 48,374 new cases and 171 deaths." textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="QUx-GF-OKn">
-                                            <rect key="frame" x="8" y="8" width="398" height="57"/>
+                                            <rect key="frame" x="8" y="8" width="359" height="57"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="57" id="1wj-h4-Cib"/>
                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="398" id="l2e-cr-Xir"/>
@@ -89,6 +89,7 @@
                                             <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="25"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
+                                            <size key="shadowOffset" width="0.0" height="0.0"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="News" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9BT-7v-yep">
                                             <rect key="frame" x="8" y="73" width="130" height="30"/>
@@ -96,7 +97,7 @@
                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="130" id="FNx-sw-1az"/>
                                                 <constraint firstAttribute="height" constant="30" id="vis-l1-A3v"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="20"/>
+                                            <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -118,7 +119,7 @@
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </collectionViewCellContentView>
-                                <size key="customSize" width="414" height="128"/>
+                                <size key="customSize" width="375" height="128"/>
                             </collectionViewCell>
                         </cells>
                         <connections>
