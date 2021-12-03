@@ -9,14 +9,17 @@ import UIKit
 
 class NewsCell: UICollectionViewCell {
     
-    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var titleLabel:
+        UILabel!
+    @IBOutlet var sourceLabel: UILabel!
     @IBOutlet var authorLabel: UILabel!
     
     func configureCell(with article: Articles) {
         
         DispatchQueue.main.async {
-//            self.titleLabel.text = "\(article.title ?? "No data")"
-//            self.authorLabel.text = "\(article.author)"
+            self.titleLabel.text = article.title
+            self.sourceLabel.text = article.source.name
+            self.authorLabel.text = article.author
         }
     }
 }

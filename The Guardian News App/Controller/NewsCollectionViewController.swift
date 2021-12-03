@@ -30,14 +30,20 @@ class NewsCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! NewsCell
         let article = articles[indexPath.item]
-        cell.authorLabel.text = article.author
-        cell.titleLabel.text = article.title
-        
-//        cell.configureCell(with: article)
+        cell.configureCell(with: article)
     
         return cell
     }
 
+    @IBAction func updateButtonPressed(_ sender: UIBarButtonItem) {
+        DispatchQueue.main.async {
+            self.parseJSON()
+        }
+        collectionView.reloadData()
+    }
+    
+    
+    
 //MARK: - JSON parsing
 
     func parseJSON() {

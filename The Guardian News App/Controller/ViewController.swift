@@ -19,7 +19,9 @@ class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toNewsVC" {
         let destinationVC = segue.destination as? NewsCollectionViewController
-        destinationVC?.parseJSON()
+            DispatchQueue.global().async {
+                destinationVC?.parseJSON()
+            }
         }
     }
 }
