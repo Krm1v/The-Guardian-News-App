@@ -8,67 +8,53 @@
 import UIKit
 
 class NewsCollectionViewController: UICollectionViewController {
+    
+    private let url = "https://newsapi.org/v2/everything?q=Apple&from=2021-12-02&sortBy=popularity&apiKey=a7962c140593469a91318f5ae95dea7c"
 
+    var articles = [Articles]()
+        
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
+        navigationItem.hidesBackButton = true
+//        parseJSON()
     }
 
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
 
     // MARK: UICollectionViewDataSource
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return 3
+        return articles.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-    
-        // Configure the cell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! NewsCell
+        let article = articles[indexPath.item]
+        cell.authorLabel.text = article.author
+        cell.titleLabel.text = article.title
+        
+//        cell.configureCell(with: article)
     
         return cell
     }
 
-    // MARK: UICollectionViewDelegate
+//MARK: - JSON parsing
 
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
+    func parseJSON() {
+        guard let url = URL(string: url) else { return }
+        URLSession.shared.dataTask(with: url) { data, _, error in
+            guard let data = data else { return }
+            
+            do {
+                let newsFeed = try JSONDecoder().decode(NewsFeed.self, from: data)
+                self.articles = newsFeed.articles
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                }
+                print(self.articles.count)
+            } catch {
+                print(error)
+            }
+        }.resume()
     }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
-    
-    }
-    */
-
 }

@@ -14,6 +14,14 @@ class ViewController: UIViewController {
         
     }
 
-
+//MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toNewsVC" {
+        let destinationVC = segue.destination as? NewsCollectionViewController
+        destinationVC?.parseJSON()
+        }
+    }
 }
+
 
