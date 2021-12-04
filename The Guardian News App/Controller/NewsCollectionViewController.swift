@@ -10,18 +10,14 @@ import UIKit
 class NewsCollectionViewController: UICollectionViewController {
     
     private let url = "https://newsapi.org/v2/everything?q=Apple&from=2021-12-02&sortBy=popularity&apiKey=a7962c140593469a91318f5ae95dea7c"
-
     var articles = [Articles]()
         
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.hidesBackButton = true
-//        parseJSON()
     }
-
-
-
-    // MARK: UICollectionViewDataSource
+    
+// MARK: UICollectionViewDataSource
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return articles.count
@@ -35,14 +31,20 @@ class NewsCollectionViewController: UICollectionViewController {
         return cell
     }
 
+//MARK: - CollectionView Delegate Methods
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath)
+        
+    }
+    
+
     @IBAction func updateButtonPressed(_ sender: UIBarButtonItem) {
         DispatchQueue.main.async {
             self.parseJSON()
         }
         collectionView.reloadData()
     }
-    
-    
     
 //MARK: - JSON parsing
 
@@ -62,5 +64,17 @@ class NewsCollectionViewController: UICollectionViewController {
                 print(error)
             }
         }.resume()
+    }
+
+//MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard segue.identifier == "toDetail" else { return }
+        let destinationVC = segue.destination as! DetailViewController
+        let cell = sender as! NewsCell
+        if let indexPath = self.collectionView.indexPath(for: cell) {
+       
+            destinationVC.titleLabel.text = articles[indexPath.item].title
+        }
     }
 }
