@@ -21,6 +21,7 @@ class ViewController: UIViewController {
         let destinationVC = segue.destination as? NewsCollectionViewController
             DispatchQueue.global().async {
                 destinationVC?.parseJSON()
+               
             }
         }
     }

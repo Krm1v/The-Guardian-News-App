@@ -34,11 +34,13 @@ class NewsCollectionViewController: UICollectionViewController {
 //MARK: - CollectionView Delegate Methods
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let cell = collectionView.cellForItem(at: indexPath)
-        
+        if let cell = collectionView.cellForItem(at: indexPath) {
+            performSegue(withIdentifier: "toDetail", sender: cell)
+        } else {
+            //Error
+        }
     }
     
-
     @IBAction func updateButtonPressed(_ sender: UIBarButtonItem) {
         DispatchQueue.main.async {
             self.parseJSON()
@@ -65,16 +67,22 @@ class NewsCollectionViewController: UICollectionViewController {
             }
         }.resume()
     }
+    
+    
 
 //MARK: - Navigation
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard segue.identifier == "toDetail" else { return }
-        let destinationVC = segue.destination as! DetailViewController
-        let cell = sender as! NewsCell
-        if let indexPath = self.collectionView.indexPath(for: cell) {
-       
-            destinationVC.titleLabel.text = articles[indexPath.item].title
+
+        if let indexPath = self.collectionView?.indexPath(for: sender as! UICollectionViewCell) {
+                if segue.identifier == "toDetail" {
+                    let detailVC = segue.destination as! DetailVC
+                    detailVC.articleTitle = articles[indexPath.row].title ?? "No data"
+                    detailVC.articleDescriptionText = articles[indexPath.row].description ?? "No data"
+                    detailVC.content = articles[indexPath.row].content ?? "No data"
+                    detailVC.image = articles[indexPath.row].urlToImage ?? "No data"
+                }
+            } else {
+                // Error sender is not a cell or cell is not in collectionView.
         }
     }
 }
