@@ -9,8 +9,8 @@ import UIKit
 
 class NewsCell: UICollectionViewCell {
     
-    @IBOutlet var titleLabel:
-        UILabel!
+//MARK: - @IBOutlets
+    @IBOutlet var titleLabel:UILabel!
     @IBOutlet var sourceLabel: UILabel!
     @IBOutlet var authorLabel: UILabel!
     

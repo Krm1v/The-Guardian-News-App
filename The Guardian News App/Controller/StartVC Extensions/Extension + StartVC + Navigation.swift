@@ -1,20 +1,13 @@
 //
-//  ViewController.swift
+//  Extension + StartVC + Navigation.swift
 //  The Guardian News App
 //
-//  Created by Владислав Баранкевич on 01.12.2021.
+//  Created by Владислав Баранкевич on 10.12.2021.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-    }
-
-//MARK: - Navigation
+extension StartViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toNewsVC" {
@@ -26,5 +19,3 @@ class ViewController: UIViewController {
         }
     }
 }
-
-
