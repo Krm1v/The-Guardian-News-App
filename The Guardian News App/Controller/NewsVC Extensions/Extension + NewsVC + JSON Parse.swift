@@ -20,7 +20,6 @@ extension NewsCollectionViewController {
                 DispatchQueue.main.async {
                     self.collectionView.reloadData()
                 }
-                print(self.articles.count)
             } catch {
                 print(error)
             }
