@@ -201,7 +201,7 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1pf-Dd-mQi">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1pf-Dd-mQi" customClass="ImageView" customModule="The_Guardian_News_App" customModuleProvider="target">
                                                 <rect key="frame" x="8" y="167.5" width="398" height="200"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="200" id="AM9-DP-5Qs"/>
@@ -264,7 +264,13 @@
                             <constraint firstItem="jZn-IN-mM7" firstAttribute="top" secondItem="NTI-Eg-xpr" secondAttribute="top" id="doV-Za-oKF"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="2xc-Gx-97p"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="2xc-Gx-97p">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="star" catalog="system" id="2ge-g5-HZn">
+                            <connections>
+                                <action selector="favoritesButton:" destination="wmZ-h9-ss4" id="haM-iY-tvt"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <size key="freeformSize" width="414" height="2000"/>
                     <connections>
                         <outlet property="activityIndicator" destination="uVS-oP-dcH" id="EGK-h3-V7A"/>
@@ -304,6 +310,7 @@
     <resources>
         <image name="GuardianLogo" width="3500" height="519"/>
         <image name="sparkles" catalog="system" width="112" height="128"/>
+        <image name="star" catalog="system" width="128" height="116"/>
         <image name="the-guardian-3" width="2500" height="2500"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

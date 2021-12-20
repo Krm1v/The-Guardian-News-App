@@ -33,5 +33,9 @@ class DetailVC: UIViewController {
     override func viewDidLayoutSubviews() {
         contentLabel.sizeToFit()
     }
+    
+    @IBAction func favoritesButton(_ sender: UIBarButtonItem) {
+    }
+    
 }
 

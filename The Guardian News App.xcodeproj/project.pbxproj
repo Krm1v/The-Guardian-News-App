@@ -24,6 +24,7 @@
 		864E75322763FB6000D7DEB7 /* Extension + DetailVC + ConfigureUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864E75312763FB6000D7DEB7 /* Extension + DetailVC + ConfigureUI.swift */; };
 		864E75352763FC1500D7DEB7 /* Extension + StartVC + Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864E75342763FC1500D7DEB7 /* Extension + StartVC + Navigation.swift */; };
 		864E75382763FC7300D7DEB7 /* Extension + NewsVC + Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864E75372763FC7300D7DEB7 /* Extension + NewsVC + Navigation.swift */; };
+		86D978AA2770F6F600804699 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D978A92770F6F600804699 /* ImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		864E75312763FB6000D7DEB7 /* Extension + DetailVC + ConfigureUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + DetailVC + ConfigureUI.swift"; sourceTree = "<group>"; };
 		864E75342763FC1500D7DEB7 /* Extension + StartVC + Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + StartVC + Navigation.swift"; sourceTree = "<group>"; };
 		864E75372763FC7300D7DEB7 /* Extension + NewsVC + Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + NewsVC + Navigation.swift"; sourceTree = "<group>"; };
+		86D978A92770F6F600804699 /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				8602DF20275949FA00BA86E2 /* Articles.swift */,
+				86D978A92770F6F600804699 /* ImageView.swift */,
 			);
 			name = Model;
 			path = ..;
@@ -227,6 +230,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86D978AA2770F6F600804699 /* ImageView.swift in Sources */,
 				864E752D2763FA2F00D7DEB7 /* Extension + NewsVC + JSON Parse.swift in Sources */,
 				8602DF21275949FA00BA86E2 /* Articles.swift in Sources */,
 				8602DF0927580AAC00BA86E2 /* StartViewController.swift in Sources */,
